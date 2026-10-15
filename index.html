@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Invitation</title><style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: #111111;
+    color: #f5d78e;
+    text-align: center;
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 60px 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page.active {
+    display: flex;
+}
+
+.card {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px 25px;
+    border: 1px solid #c9a44c;
+    border-radius: 18px;
+    background: #1b1b1b;
+    box-shadow: 0 0 30px #000000;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #f4ead2;
+}
+
+.gold {
+    color: #f5d78e;
+}
+
+button {
+    background: #c9a44c;
+    color: #111111;
+    border: none;
+    padding: 13px 25px;
+    margin: 10px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #f5d78e;
+}
+
+.details {
+    border-bottom: 1px solid #5b4a28;
+    padding: 10px;
+}
+
+.number {
+    color: #c9a44c;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+footer {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #b9aa89;
+}
+</style></head><body><section class="page active" id="page1">
+    <div class="card">
+        <div class="number">A SPECIAL CELEBRATION</div>
+        <h1>You're Invited!</h1>
+        <p>Join us for an unforgettable evening.</p>
+        <h2 class="gold">Sophia's Birthday</h2>
+        <p>
+            A beautiful night, wonderful people,<br>
+            delicious food, and memories to cherish.
+        </p>
+        <button onclick="showPage(2)">Open Invitation →</button>
+        <footer>AN EVENING TO REMEMBER</footer>
+    </div>
+</section><section class="page" id="page2">
+    <div class="card">
+        <div class="number">THE CELEBRATION</div>
+        <h1>Party Details</h1>    <div class="details">
+        <h2>📅 Date</h2>
+        <p>Friday, November 20, 2026</p>
+    </div>
+
+    <div class="details">
+        <h2>⏰ Time</h2>
+        <p>7:00 PM – 11:00 PM</p>
+    </div>
+
+    <div class="details">
+        <h2>📍 Location</h2>
+        <p>The Golden Garden<br>Tehran, Iran</p>
+    </div>
+
+    <div class="details">
+        <h2>🍽️ Food & Drinks</h2>
+        <p>Pizza, pasta, birthday cake,<br>soft drinks, and desserts.</p>
+    </div>
+
+    <button onclick="showPage(1)">← Previous</button>
+    <button onclick="showPage(3)">Next →</button>
+</div>
+
+</section><section class="page" id="page3">
+    <div class="card">
+        <div class="number">LET'S CELEBRATE</div>
+        <h1>Save the Date!</h1>
+        <h2 class="gold">Your Presence Matters</h2>    <p>
+        Let's make this birthday magical!<br>
+        Come dressed to celebrate,<br>
+        laugh, dance, and enjoy the night.
+    </p>
+
+    <p>
+        <strong>Friday, November 20</strong><br>
+        7:00 PM<br>
+        The Golden Garden
+    </p>
+
+    <button onclick="showPage(2)">← Previous</button>
+    <button onclick="showPage(1)">Back to Start ↺</button>
+
+    <footer>THANK YOU FOR BEING PART OF OUR STORY</footer>
+</div>
+
+</section><script>
+function showPage(pageNumber) {
+    document.querySelectorAll(".page").forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    document.getElementById("page" + pageNumber)
+        .classList.add("active");
+
+    window.scrollTo(0, 0);
+}
+</script></body>
+</html>
